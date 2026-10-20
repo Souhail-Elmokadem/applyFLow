@@ -1,0 +1,1430 @@
+/* ============================================================
+   APPLYFLOW — LIVE CAMPAIGN TRACKER
+   ============================================================ */
+
+.liveTracker,
+.liveTracker * {
+  box-sizing: border-box;
+}
+
+.liveTracker {
+  width: 100%;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #172033;
+  background: #ffffff;
+
+  border: 1px solid #e8eaf2;
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.02),
+    0 12px 35px rgba(16, 24, 40, 0.05);
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.liveTrackerHero {
+  min-height: 108px;
+
+  padding: 24px 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  border-bottom: 1px solid #edf0f6;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fafaff 55%,
+      #f5f3ff 100%
+    );
+}
+
+.liveTrackerHeroLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.liveTrackerLogo {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  color: #6758e8;
+
+  background: #f0edff;
+  border: 1px solid #e6e0ff;
+}
+
+.liveTrackerHeading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.liveTrackerHeading h2 {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 750;
+
+  color: #161d2f;
+}
+
+.liveTrackerHeroLeft p {
+  margin: 6px 0 0;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 13px;
+  color: #7b8498;
+}
+
+.liveBadge {
+  height: 25px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 0 9px;
+
+  border-radius: 999px;
+
+  background: #ecfbf4;
+  border: 1px solid #d5f4e5;
+
+  color: #1c9c68;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.liveBadge span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #22b573;
+
+  box-shadow: 0 0 0 4px rgba(34, 181, 115, 0.1);
+}
+
+
+/* ============================================================
+   HERO RIGHT
+   ============================================================ */
+
+.liveTrackerHeroRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.liveConnection {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #8a93a5;
+}
+
+.livePercent {
+  min-width: 82px;
+  text-align: right;
+}
+
+.livePercent strong {
+  display: block;
+
+  font-size: 25px;
+  line-height: 1;
+
+  color: #171e31;
+}
+
+.livePercent span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 10px;
+  color: #98a0b2;
+}
+
+
+/* ============================================================
+   PROGRESS
+   ============================================================ */
+
+.liveProgressSection {
+  padding: 20px 28px 10px;
+}
+
+.liveProgressTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+
+  font-size: 12px;
+}
+
+.liveProgressTop span {
+  color: #70798d;
+}
+
+.liveProgressTop strong {
+  color: #30384b;
+  font-weight: 700;
+}
+
+.liveProgressTrack {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #f0f1f6;
+}
+
+.liveProgressValue {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #7868f2,
+    #6354e5
+  );
+
+  box-shadow: 0 0 12px rgba(103, 88, 232, 0.25);
+}
+
+.liveProgressBottom {
+  margin-top: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  font-size: 10.5px;
+  color: #9aa2b3;
+}
+
+
+/* ============================================================
+   STAT CARDS
+   ============================================================ */
+
+.liveStats {
+  padding: 15px 28px 24px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.liveStatCard {
+  min-width: 0;
+  min-height: 92px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 17px;
+
+  border: 1px solid #eceef4;
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.02);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.liveStatCard:hover {
+  border-color: #dddfea;
+
+  box-shadow:
+    0 8px 22px rgba(16, 24, 40, 0.06);
+}
+
+.liveStatIcon {
+  width: 39px;
+  height: 39px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+}
+
+.liveStatContent {
+  min-width: 0;
+
+  display: grid;
+}
+
+.liveStatContent strong {
+  font-size: 20px;
+  line-height: 1;
+
+  color: #192033;
+}
+
+.liveStatContent span {
+  margin-top: 5px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #3b4356;
+}
+
+.liveStatContent small {
+  margin-top: 2px;
+
+  font-size: 9.5px;
+
+  color: #9ca4b4;
+}
+
+
+/* Pending */
+
+.liveStatCard.pending .liveStatIcon {
+  color: #c38b17;
+  background: #fff8e6;
+}
+
+/* Sending */
+
+.liveStatCard.sending .liveStatIcon {
+  color: #6254e7;
+  background: #f0edff;
+}
+
+.liveStatCard.sending.active {
+  border-color: #dcd6ff;
+  background: #fbfaff;
+}
+
+/* Sent */
+
+.liveStatCard.sent .liveStatIcon {
+  color: #159966;
+  background: #eaf9f2;
+}
+
+/* Failed */
+
+.liveStatCard.failed .liveStatIcon {
+  color: #dc5662;
+  background: #fff0f1;
+}
+
+.liveStatActive {
+  position: absolute;
+
+  top: 9px;
+  right: 9px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  color: #6858e8;
+}
+
+.liveStatActive span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #6858e8;
+}
+
+
+/* ============================================================
+   STREAM
+   ============================================================ */
+
+.liveStream {
+  margin: 0 28px 24px;
+
+  overflow: hidden;
+
+  border: 1px solid #e8eaf1;
+  border-radius: 17px;
+
+  background: #ffffff;
+}
+
+.liveStreamHeader {
+  min-height: 72px;
+
+  padding: 17px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid #edf0f5;
+}
+
+.liveStreamTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.liveStreamTitle svg {
+  color: #6254e7;
+}
+
+.liveStreamTitle h3 {
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  color: #242b3d;
+}
+
+.liveStreamHeader p {
+  margin: 4px 0 0;
+
+  font-size: 10px;
+
+  color: #a0a7b7;
+}
+
+.liveStreamStatus {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #8b94a5;
+}
+
+.liveStreamStatus span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #28b97a;
+
+  box-shadow:
+    0 0 0 4px rgba(40, 185, 122, 0.1);
+}
+
+
+/* ============================================================
+   TOOLBAR
+   ============================================================ */
+
+.liveToolbar {
+  padding: 14px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  background: #fbfbfd;
+
+  border-bottom: 1px solid #edf0f5;
+}
+
+.liveSearch {
+  width: min(380px, 100%);
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 12px;
+
+  border: 1px solid #e2e5ed;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.liveSearch:focus-within {
+  border-color: #8a7df0;
+
+  box-shadow:
+    0 0 0 3px rgba(103, 88, 232, 0.08);
+}
+
+.liveSearch svg {
+  flex-shrink: 0;
+  color: #9ca5b7;
+}
+
+.liveSearch input {
+  width: 100%;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #252c3e;
+
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.liveSearch input::placeholder {
+  color: #aab1bf;
+}
+
+
+/* ============================================================
+   FILTERS
+   ============================================================ */
+
+.liveFilters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  flex-wrap: wrap;
+}
+
+.liveFilterButton {
+  appearance: none;
+
+  height: 32px;
+
+  padding: 0 10px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #70798d;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition: all 0.18s ease;
+}
+
+.liveFilterButton:hover {
+  background: #f1f1f7;
+  color: #3c4457;
+}
+
+.liveFilterButton.active {
+  color: #6254e7;
+
+  background: #efedff;
+
+  border-color: #e5e0ff;
+}
+
+.liveFilterButton span {
+  min-width: 18px;
+  height: 18px;
+
+  padding: 0 5px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background: #eceef3;
+
+  color: #6f7788;
+
+  font-size: 9px;
+}
+
+.liveFilterButton.active span {
+  color: #6254e7;
+  background: #ffffff;
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.liveTableHeader,
+.liveEmailRow {
+  display: grid;
+
+  grid-template-columns:
+    minmax(190px, 1.4fr)
+    minmax(150px, 1fr)
+    minmax(210px, 1.25fr)
+    115px;
+
+  column-gap: 20px;
+
+  align-items: center;
+}
+
+.liveTableHeader {
+  min-height: 40px;
+
+  padding: 0 20px;
+
+  background: #fafafd;
+
+  border-bottom: 1px solid #edf0f5;
+}
+
+.liveTableHeader span {
+  font-size: 8.5px;
+  font-weight: 750;
+
+  letter-spacing: 0.06em;
+
+  color: #9aa2b2;
+}
+
+.liveEmailList {
+  width: 100%;
+}
+
+.liveEmailRow {
+  position: relative;
+
+  min-height: 74px;
+
+  padding: 12px 20px;
+
+  border-bottom: 1px solid #f0f1f5;
+
+  background: #ffffff;
+
+  transition:
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.liveEmailRow:last-child {
+  border-bottom: 0;
+}
+
+.liveEmailRow:hover {
+  background: #fcfcff;
+}
+
+.liveEmailRow.sending {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(103, 88, 232, 0.04),
+      transparent 45%
+    );
+}
+
+
+/* ============================================================
+   COMPANY
+   ============================================================ */
+
+.liveCompany {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.liveCompanyAvatar {
+  width: 37px;
+  height: 37px;
+
+  position: relative;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #f0edff;
+
+  border: 1px solid #e6e1ff;
+
+  color: #6758e8;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.liveCompanyAvatar.sent {
+  color: #159966;
+  background: #ebfaf3;
+  border-color: #d7f2e5;
+}
+
+.liveCompanyAvatar.failed {
+  color: #d94f5b;
+  background: #fff0f1;
+  border-color: #f8dadd;
+}
+
+.liveCompany > div:last-child {
+  min-width: 0;
+}
+
+.liveCompany strong {
+  max-width: 100%;
+
+  display: block;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #293043;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.liveCompany > div > span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #a1a8b6;
+
+  font-size: 9px;
+}
+
+
+/* ============================================================
+   AVATAR STATUS
+   ============================================================ */
+
+.liveAvatarPulse {
+  position: absolute;
+
+  right: -2px;
+  bottom: -2px;
+
+  width: 9px;
+  height: 9px;
+
+  border: 2px solid white;
+  border-radius: 50%;
+
+  background: #6758e8;
+}
+
+.liveAvatarCheck {
+  position: absolute;
+
+  right: -3px;
+  bottom: -3px;
+
+  width: 13px;
+  height: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background: #1bab70;
+}
+
+
+/* ============================================================
+   ACTIVITY / EMAIL
+   ============================================================ */
+
+.liveActivity {
+  min-width: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #727b8e;
+
+  font-size: 10.5px;
+}
+
+.liveEmailAddress {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #626b7d;
+
+  font-size: 10.5px;
+}
+
+.liveEmailAddress svg {
+  flex-shrink: 0;
+
+  color: #9ba3b3;
+}
+
+.liveEmailAddress span {
+  min-width: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   STATUS
+   ============================================================ */
+
+.liveEmailStatus {
+  width: fit-content;
+
+  min-width: 82px;
+  height: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 0 9px;
+
+  border-radius: 999px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.liveEmailStatus.pending {
+  color: #a8730f;
+
+  background: #fff7dd;
+
+  border: 1px solid #f9ebbc;
+}
+
+.liveEmailStatus.sending {
+  color: #6254e7;
+
+  background: #efedff;
+
+  border: 1px solid #dfd9ff;
+}
+
+.liveEmailStatus.sent {
+  color: #168c60;
+
+  background: #eaf9f2;
+
+  border: 1px solid #d4f1e3;
+}
+
+.liveEmailStatus.failed {
+  color: #cf4855;
+
+  background: #fff0f1;
+
+  border: 1px solid #f6dadd;
+}
+
+
+/* ============================================================
+   EMPTY
+   ============================================================ */
+
+.liveEmpty {
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #8d96a7;
+}
+
+.liveEmpty > div {
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #f3f2fa;
+
+  color: #7467e8;
+}
+
+.liveEmpty strong {
+  color: #394155;
+  font-size: 12px;
+}
+
+.liveEmpty span {
+  margin-top: 4px;
+
+  font-size: 10px;
+}
+
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+
+.livePagination {
+  min-height: 57px;
+
+  padding: 10px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-top: 1px solid #edf0f5;
+
+  background: #fbfbfd;
+}
+
+.livePaginationInfo {
+  color: #929aaa;
+
+  font-size: 10px;
+}
+
+.livePaginationInfo strong {
+  color: #4d5568;
+}
+
+.livePaginationControls {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.livePaginationControls button {
+  appearance: none;
+
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e1e4ec;
+  border-radius: 8px;
+
+  color: #596174;
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition: all 0.18s ease;
+}
+
+.livePaginationControls button:hover:not(:disabled) {
+  color: #6254e7;
+
+  border-color: #cfc9fa;
+
+  background: #f4f2ff;
+}
+
+.livePaginationControls button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.livePageNumber {
+  min-width: 72px;
+
+  text-align: center;
+
+  color: #8a92a3;
+
+  font-size: 10px;
+}
+
+.livePageNumber strong {
+  color: #6254e7;
+}
+
+
+/* ============================================================
+   ERROR
+   ============================================================ */
+
+.liveTrackerError {
+  margin: 0 28px 20px;
+
+  min-height: 40px;
+
+  padding: 9px 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border-radius: 10px;
+
+  border: 1px solid #f5d5d8;
+
+  color: #c94b57;
+
+  background: #fff4f5;
+
+  font-size: 10px;
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.liveTrackerFooter {
+  min-height: 48px;
+
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top: 1px solid #edf0f5;
+
+  background: #fbfbfd;
+
+  color: #9aa2b2;
+
+  font-size: 9.5px;
+}
+
+.liveTrackerFooter > div {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.livePulse {
+  width: 7px;
+  height: 7px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+
+  background: #23b675;
+
+  box-shadow:
+    0 0 0 4px rgba(35, 182, 117, 0.1);
+
+  animation:
+    livePulseAnimation 1.7s infinite;
+}
+
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+
+.liveTrackerLoading {
+  min-height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 30px;
+}
+
+.liveLoadingIcon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  color: #6758e8;
+
+  background: #f0edff;
+}
+
+.liveTrackerLoading strong {
+  display: block;
+
+  color: #30384b;
+
+  font-size: 12px;
+}
+
+.liveTrackerLoading span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #9ba3b3;
+
+  font-size: 10px;
+}
+
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+.liveSpin {
+  animation:
+    liveSpinAnimation 0.9s linear infinite;
+}
+
+@keyframes liveSpinAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes livePulseAnimation {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(35, 182, 117, 0.3);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 7px rgba(35, 182, 117, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(35, 182, 117, 0);
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1050px) {
+
+  .liveStats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .liveToolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .liveSearch {
+    width: 100%;
+  }
+
+  .liveTableHeader,
+  .liveEmailRow {
+    grid-template-columns:
+      minmax(180px, 1.4fr)
+      minmax(180px, 1.2fr)
+      105px;
+  }
+
+  .liveTableHeader span:nth-child(2),
+  .liveActivity {
+    display: none;
+  }
+}
+
+
+@media (max-width: 760px) {
+
+  .liveTracker {
+    border-radius: 16px;
+  }
+
+  .liveTrackerHero {
+    padding: 20px;
+
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .liveTrackerHeroRight {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .liveProgressSection,
+  .liveStats {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .liveStream {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .liveStats {
+    grid-template-columns: 1fr;
+  }
+
+  .liveTableHeader {
+    display: none;
+  }
+
+  .liveEmailRow {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding: 16px;
+  }
+
+  .liveActivity {
+    display: block;
+  }
+
+  .liveEmailAddress {
+    padding-left: 48px;
+  }
+
+  .liveEmailStatus {
+    margin-left: 48px;
+  }
+
+  .livePagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .liveTrackerFooter {
+    padding: 15px 20px;
+
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+/* =========================================
+   LIVE CAMPAIGN ACTIONS
+========================================= */
+
+.liveCampaignActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.liveGmailSelect {
+  max-width: 230px;
+  min-width: 170px;
+  padding: 10px 12px;
+  border: 1px solid #e0e4f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #26334d;
+  font-size: 12px;
+  outline: none;
+}
+
+.liveGmailSelect:focus {
+  border-color: #7565f5;
+}
+
+.liveActionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.livePauseButton {
+  background: #fff0df;
+  color: #b45309;
+}
+
+.livePauseButton:hover:not(:disabled) {
+  background: #ffe4c4;
+}
+
+.liveResumeButton {
+  background: #6856f5;
+  color: white;
+}
+
+.liveResumeButton:hover:not(:disabled) {
+  background: #5140dd;
+}
+
+.liveActionButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.liveActionError,
+.liveActionMessage {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 12px 20px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.liveActionError {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.liveActionMessage {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+@media (max-width: 768px) {
+  .liveCampaignActions {
+    width: 100%;
+  }
+
+  .liveGmailSelect {
+    flex: 1;
+    min-width: 0;
+  }
+}
